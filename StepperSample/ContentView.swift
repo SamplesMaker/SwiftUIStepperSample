@@ -9,8 +9,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var numberOfItems: Int = 0
+    
     var body: some View {
-        Text("Hello, World!")
+        Stepper(value: $numberOfItems, in: 0...10) {
+            Text("증가한 수는 \(numberOfItems) 에요")
+        }.padding()
     }
 }
 
